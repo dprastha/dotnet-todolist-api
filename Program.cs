@@ -8,7 +8,17 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 // Register Database Context
-builder.Services.AddDbContext<Context>(opt => opt.UseInMemoryDatabase("TodoList"));
+var connectionString = "server=localhost;user=daniel;password=password;database=dotnet-todolist";
+var serverVersion = new MySqlServerVersion(new Version(8, 0, 29));
+builder.Services.AddDbContext<Context>(dbContextOption => dbContextOption
+    .UseMySql(connectionString, serverVersion)
+    // The following three options help with debugging, but should
+    // be changed or removed for production.
+    .LogTo(Console.WriteLine, LogLevel.Information)
+    .EnableSensitiveDataLogging()
+    .EnableDetailedErrors()
+
+);
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

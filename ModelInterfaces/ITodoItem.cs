@@ -1,8 +1,6 @@
-using TodoApi.ModelInterfaces;
+namespace TodoApi.ModelInterfaces;
 
-namespace TodoApi.Models;
-
-public class TodoItem : ITodoItem
+interface ITodoItem
 {
     public long Id { get; set; }
     public string? Name { get; set; }
