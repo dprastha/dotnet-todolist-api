@@ -9,7 +9,7 @@ builder.Services.AddControllers();
 
 // Register Database Context
 var connectionString = "server=localhost;user=daniel;password=password;database=dotnet-todolist";
-var serverVersion = new MySqlServerVersion(new Version(8, 0, 29));
+var serverVersion = new MySqlServerVersion(new Version(8, 0, 32));
 builder.Services.AddDbContext<Context>(dbContextOption => dbContextOption
     .UseMySql(connectionString, serverVersion)
     // The following three options help with debugging, but should

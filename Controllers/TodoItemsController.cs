@@ -11,14 +11,9 @@ namespace dotnet_TodoApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class TodoItemsController : ControllerBase
+    public class TodoItemsController(Context context) : ControllerBase
     {
-        private readonly Context _context;
-
-        public TodoItemsController(Context context)
-        {
-            _context = context;
-        }
+        private readonly Context _context = context;
 
         // GET: api/TodoItems
         [HttpGet]
@@ -80,8 +75,7 @@ namespace dotnet_TodoApi.Controllers
             _context.TodoItems.Add(todoItem);
             await _context.SaveChangesAsync();
 
-            // return CreatedAtAction("GetTodoItem", new { id = todoItem.Id }, todoItem);
-            return CreatedAtAction(nameof(GetTodoItem), new {todoItem.Id}, todoItem);
+            return CreatedAtAction(nameof(GetTodoItem), new { todoItem.Id }, todoItem);
         }
 
         // DELETE: api/TodoItems/5
