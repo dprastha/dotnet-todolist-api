@@ -1,21 +1,29 @@
 using System.Net;
 using Microsoft.AspNetCore.Mvc;
 using NuGet.Protocol;
-using TodoApi.Models;
 using TodoApi.Requests;
+using TodoApi.Services;
+using BC = BCrypt.Net.BCrypt;
 
 namespace TodoApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AuthController() : ControllerBase
+    public class AuthController(UserService userService) : ControllerBase
     {
+        private readonly UserService _userService = userService;
 
         [HttpPost("register")]
-        public ApiResponse Register(AuthRegister register)
+        public async Task<ApiResponse> Register(AuthRegister register)
         {
             Console.WriteLine(register.ToJson());
-            // userApplication.Register(register);
+            await _userService.Create(new Models.User()
+            {
+                Email = register.Email,
+                FirstName = register.FirstName,
+                LastName = register.LastName,
+                Password = BC.HashPassword(register.Password),
+            });
 
             return new ApiResponseData(HttpStatusCode.OK, null);
         }

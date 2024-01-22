@@ -5,14 +5,14 @@ namespace TodoApi.Requests;
 public class AuthRegister
 {
     [Required, EmailAddress]
-    public string? Email { get; set; }
+    public required string Email { get; set; }
     [Required, MinLength(8)]
-    public string? Password { get; set; }
+    public required string Password { get; set; }
     // First name
     [Required]
-    public string? FirstName { get; set; }
+    public required string FirstName { get; set; }
     [Required]
-    public string? LastName { get; set; }
+    public required string LastName { get; set; }
 }
 
 public class Login
