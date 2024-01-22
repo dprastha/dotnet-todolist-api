@@ -1,4 +1,6 @@
+using System.Net;
 using Microsoft.AspNetCore.Mvc;
+using NuGet.Protocol;
 using TodoApi.Models;
 using TodoApi.Requests;
 
@@ -6,14 +8,16 @@ namespace TodoApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AuthController : ControllerBase
+    public class AuthController() : ControllerBase
     {
-        // private readonly IAuthService _authService;
 
         [HttpPost("register")]
-        public async Task<ActionResult<User>> Register(AuthRegister register)
+        public ApiResponse Register(AuthRegister register)
         {
-            return Ok();
+            Console.WriteLine(register.ToJson());
+            // userApplication.Register(register);
+
+            return new ApiResponseData(HttpStatusCode.OK, null);
         }
     }
 }

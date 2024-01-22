@@ -254,3 +254,4 @@
 /Users/dprastha/Developer/training/dotnet-TodoApi/bin/Debug/net8.0/MySqlConnector.dll
 /Users/dprastha/Developer/training/dotnet-TodoApi/bin/Debug/net8.0/Pomelo.EntityFrameworkCore.MySql.dll
 /Users/dprastha/Developer/training/dotnet-TodoApi/obj/Debug/net8.0/dotnet-TodoApi.sourcelink.json
+/Users/dprastha/Developer/training/dotnet-TodoApi/bin/Debug/net8.0/BCrypt.Net-Next.dll

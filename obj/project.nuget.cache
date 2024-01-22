@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "cJqHlGu0/nPNkJvfhH/W8AP11d/US+5AW5kK8dTMQ/kSwNVdOBO83P3ManVPOT8jwULfSQJ6BIoPGlhg2mZi0w==",
+  "dgSpecHash": "IrwQu8CcoaZlmeqkkaS27pWfitA9OW6069IkLvuNkVOV96PVnM7mcsYISDdO4tLOHLvOvlaqekq0JEACdvc4nQ==",
   "success": true,
   "projectFilePath": "/Users/dprastha/Developer/training/dotnet-TodoApi/dotnet-TodoApi.csproj",
   "expectedPackageFiles": [
     "/Users/dprastha/.nuget/packages/azure.core/1.25.0/azure.core.1.25.0.nupkg.sha512",
     "/Users/dprastha/.nuget/packages/azure.identity/1.7.0/azure.identity.1.7.0.nupkg.sha512",
+    "/Users/dprastha/.nuget/packages/bcrypt.net-next/4.0.3/bcrypt.net-next.4.0.3.nupkg.sha512",
     "/Users/dprastha/.nuget/packages/humanizer/2.14.1/humanizer.2.14.1.nupkg.sha512",
     "/Users/dprastha/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/Users/dprastha/.nuget/packages/humanizer.core.af/2.14.1/humanizer.core.af.2.14.1.nupkg.sha512",
