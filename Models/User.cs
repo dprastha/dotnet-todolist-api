@@ -9,5 +9,5 @@ public class User : IUser
     public string? LastName { get; set; }
 
     // User have list of TodoItem
-    public List<TodoItem> TodoItems { get; set; } = new();
+    public List<TodoItem> TodoItems { get; set; } = [];
 }
